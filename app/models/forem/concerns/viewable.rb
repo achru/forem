@@ -18,7 +18,7 @@ module Forem
         return unless user
 
         view = views.find_or_create_by(user_id: user.id)
-        view.increment!(:count)
+        view.increment!('count')
         increment!(:views_count)
 
         # update current_viewed_at if more than 15 minutes ago
