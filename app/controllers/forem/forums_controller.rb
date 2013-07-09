@@ -8,6 +8,7 @@ module Forem
     end
 
     def show
+      authorize! :show, @forum
       register_view
 
       @topics = if forem_admin_or_moderator?(@forum)

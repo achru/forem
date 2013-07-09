@@ -40,7 +40,7 @@ module Forem
 
       private
         def find_topic
-          @topic = Forem::Topic.find(params[:id])
+          @topic = Forem::Topic.friendly.find(params[:id])
         end
     end
   end

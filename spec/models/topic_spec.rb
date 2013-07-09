@@ -29,13 +29,13 @@ describe Forem::Topic do
     end
   end
 
-  describe "protected attributes" do
-    [:pinned, :locked].each do |attr|
-      it "cannot assign #{attr}" do
-        lambda { Forem::Topic.new(attr => true) }.should raise_error(ActiveModel::MassAssignmentSecurity::Error)
-      end
-    end
-  end
+  # describe "protected attributes" do
+  #   [:pinned, :locked].each do |attr|
+  #     it "cannot assign #{attr}" do
+  #       lambda { Forem::Topic.new(attr => true) }.should raise_error(ActiveModel::MassAssignmentSecurity::Error)
+  #     end
+  #   end
+  # end
 
   describe "pinning" do
     it "should show pinned topics up top" do
