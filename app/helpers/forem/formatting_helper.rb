@@ -5,7 +5,7 @@ module Forem
       if Forem.formatter
         Forem.formatter.format(as_sanitized_text(text))
       else
-        simple_format(h(text))
+        simple_format text
       end
     end
 
@@ -13,7 +13,7 @@ module Forem
       if Forem.formatter && Forem.formatter.respond_to?(:blockquote)
         Forem.formatter.blockquote(as_sanitized_text(text)).html_safe
       else
-         "<blockquote>#{(h(text))}</blockquote>\n\n".html_safe
+         "<blockquote>#{text}</blockquote>\n\n".html_safe
       end
     end
 
