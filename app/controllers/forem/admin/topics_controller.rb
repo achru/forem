@@ -41,7 +41,7 @@ module Forem
       private
 
         def topic_params
-          params.require(:topic).permit(:subject, :forum_id, :locked, :pinned, :hidden)
+          params.permit(topic: [:subject, :forum_id, :locked, :pinned, :hidden])
         end
 
         def find_topic

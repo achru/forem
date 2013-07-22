@@ -36,7 +36,7 @@ module Forem
       private
 
       def forum_params
-        params.require(:forum).permit(:category_id, :title, :description, { :moderator_ids => []})
+        params.permit(forum: [:category_id, :title, :description, { :moderator_ids => []}])
       end
 
       def find_forum

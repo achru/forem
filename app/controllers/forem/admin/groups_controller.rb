@@ -35,7 +35,7 @@ module Forem
         end
 
         def group_params
-          params.require(:group).permit(:name)
+          params.permit(group: [:name])
         end
     end
   end

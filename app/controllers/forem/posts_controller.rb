@@ -46,7 +46,7 @@ module Forem
     private
 
     def post_params
-      params.require(:post).permit(:text, :reply_to_id)
+      params.permit(post: [:text, :reply_to_id])
     end
 
     def authorize_reply_for_topic!

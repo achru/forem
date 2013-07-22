@@ -56,7 +56,7 @@ module Forem
     protected
 
     def topic_params
-      params.require(:topic).permit(:subject, :posts_attributes => [[:text]])
+      params.permit(topic: [:subject, :posts_attributes => [[:text]]])
     end
     
     def create_successful
